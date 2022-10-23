@@ -6,9 +6,8 @@ body{
     color: rgb(114, 22, 116);
 }
 #container{
-	width: 1000px;
-	height: 550px;
-	margin: 20px auto;	
+	 display: flex;
+    flex-direction: column;	
 }
 #calculator{
 	width: 320px;
