@@ -57,12 +57,16 @@ for( var i=0;i<operator.length;i++){
                         const operator = ['%','+', '-', '/', '*']
                         const check = operator.some(item => history.includes(item))
                         if (check) {
-                            console.log(1)
                             var result= eval(history);
                             printOutput(result);
                             printHistory("");
                         } else {
-                            var result = history/100;
+                            var result = 0
+                            if(document.getElementById("history-value").innerText.includes("%")) {
+                                result = history/100;
+                            } else {
+                                result = history;
+                            }
                             printOutput(result);
                             printHistory("");
                         }
