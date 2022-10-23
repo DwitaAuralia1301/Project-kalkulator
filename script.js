@@ -54,9 +54,18 @@ for( var i=0;i<operator.length;i++){
                     output:reverseNumberFormat(output);
                     history=history+output;
                     if(this.id=="="){
-                        var result= eval(history);
-                        printOutput(result);
-                        printHistory("");
+                        const operator = ['%','+', '-', '/', '*']
+                        const check = operator.some(item => history.includes(item))
+                        if (check) {
+                            console.log(1)
+                            var result= eval(history);
+                            printOutput(result);
+                            printHistory("");
+                        } else {
+                            var result = history/100;
+                            printOutput(result);
+                            printHistory("");
+                        }
                     }
                     else{
                         history=history+this.id;
